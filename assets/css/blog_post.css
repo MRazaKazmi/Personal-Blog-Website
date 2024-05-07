@@ -1,0 +1,91 @@
+@import url("header.css");
+@import url("footer.css");
+
+.container {
+    font-family: Arial, sans-serif;
+    display:grid;
+    width:100%;
+    grid-template-rows: auto;
+    grid-gap: 30px;
+    grid-template-areas:
+    "header header header header header"
+    "blog blog blog blog side"
+    "footer footer footer footer footer";
+}
+
+header {
+    grid-area: header;
+}
+
+
+.blog-container {
+    grid-area: blog;
+}
+
+.side-container {
+    grid-area: side;
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+footer {
+    grid-area:footer;
+}
+
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 10px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+}
+
+form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #0F81FF;
+    color: white;
+    font-size: 10px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.example button:hover {
+    background: #0F81FF;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+img {
+    height:350px;
+    width:700px;
+}
+
+@media (max-width: 768px) {
+    .container{
+        grid-gap: 20px;
+}
+img {
+    height:250px;
+    width:500px;
+}
+}
+
+@media (max-width: 576px) {
+    .container {
+        grid-gap: 10px;
+}
+header {
+    flex-direction:column;
+}
+img {
+    height:200px;
+    width:400px;
+}
+}

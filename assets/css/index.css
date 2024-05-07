@@ -1,0 +1,124 @@
+@import url("header.css");
+@import url("blog_post_card.css");
+@import url("footer.css");
+
+.container {
+    font-family: Arial, sans-serif;
+    display:grid;
+    width:100%;
+    grid-auto-rows: auto;
+    grid-gap: 30px;
+    grid-template-areas:
+    "header"
+    "blog-posts"
+    "footer";
+}
+
+header {
+    grid-area: header;
+}
+
+.blog-post-container {
+    grid-area: blog-posts;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 30px;
+    grid-template-areas:
+    "blog-posts-t1 blog-posts-t2"
+    "blog-posts-b1 blog-posts-b2";
+}
+
+.blog-post{
+    border: 2px solid grey;
+    padding: 25px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+#blog-post-1 {
+    grid-area: blog-posts-t1;
+}
+
+#blog-post-2 {
+    grid-area: blog-posts-t2;
+}
+
+#blog-post-3 {
+    grid-area: blog-posts-b1;
+}
+
+#blog-post-4 {
+    grid-area: blog-posts-b2;
+}
+
+footer {
+    grid-area: footer;
+}
+
+.world {
+    color: #0F81FF;
+}
+
+.design {
+    color: #35AD51;
+}
+
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 10px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+}
+
+form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #0F81FF;
+    color: white;
+    font-size: 10px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.example button:hover {
+    background: #0F81FF;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media only screen and (max-width: 768px) {
+.container {
+    grid-gap: 20px;
+}
+}
+
+@media only screen and (max-width: 576px) {
+    .container {
+        grid-gap: 10px;
+    }
+    header {
+        flex-direction:column;
+    }
+    .blog-post-container {
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-gap: 10px;
+        grid-template-areas:
+        "blog-posts-t1"
+        "blog-posts-t2"
+        "blog-posts-b1"
+        "blog-posts-b2";
+
+    }
+    .blog-post{
+        width:450px;
+    }
+    }

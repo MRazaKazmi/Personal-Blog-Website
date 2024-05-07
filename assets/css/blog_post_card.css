@@ -1,0 +1,5 @@
+.blog-post{
+    border: 2px solid grey;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
